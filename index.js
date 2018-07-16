@@ -17,6 +17,7 @@ http.createServer(function(req, res){
         'files' : [],
         'pathname' : ''
     };
+    var dirArr = [];
     dictionary.pathname = url.parse(req.url).pathname; 
     // console.log(dictionary.pathname);
     if(req.url == '/favicon.ico'){
@@ -43,10 +44,27 @@ http.createServer(function(req, res){
                         return;
                     }
                     if(stats.isDirectory){
+                        dirArr.push(files[i]);
                         if(files[i] != 'cach'){
                             dictionary.dirs.push(files[i]);
                         }
                         // console.log(dictionary.dirs);
+                        var flag = true;
+                        if(i == files.length -1) {
+                            dirArr.forEach(function(name) {
+                                if(name === 'cach') {
+                                    flag = false;
+                                }
+                            });
+                            if(flag) {
+                                fs.mkdir('./upload/cach', function (err) {
+                                    if (err) {
+                                        console.log('创建文件夹失败。');
+                                        return;
+                                    }
+                                });
+                            }
+                        }
                     }
                     check(i+1);
                 })
@@ -173,8 +191,8 @@ http.createServer(function(req, res){
             });
         });
     }
-}).listen(80, '127.0.0.1', function(){
-    console.log('成功监听80端口。');
+}).listen(3000, '127.0.0.1', function(){
+    console.log('成功监听3000端口。');
 })
 
 function Mime(extname, fun){
