@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .area {
+            width: 960px;
+            margin: 50px auto;
+        }
+        .imgbox a {
+            float: left;
+            margin: 30px 50px 0 0;
+        }
+        .imgbox img{
+            display: block;
+            width: 100px;
+            height: 150px;  
+        }
+    </style>
+</head>
+<body>
+    <div class="imgbox area">
+        <% for(var i = 0; i < files.length; i++){ %>
+            <a href="./upload<%=pathname%>/<%=files[i]%>" target="_blank"><img src="./upload<%=pathname%>/<%=files[i]%>"></a>
+        <% } %>
+    </div>
+</body>
+</html>

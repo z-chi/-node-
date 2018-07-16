@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .area {
+            width: 960px;
+            margin: 50px auto;
+        }
+        .area li {
+            float: left;
+            margin-right: 50px;
+            list-style: none;
+        }
+        .area a {
+            display: block;
+            width: 77px;
+            padding-top: 107px;
+            background: url(<%=imgUrl%>) no-repeat left top;
+            text-decoration: none;
+        }
+        .area span {
+            display: block;
+            height: 30px;
+            width: 100%;
+            color: #ccc;
+            font-size: 24px;
+            line-height: 30px;
+            text-align: center;
+            font-family: "Microsoft YaHei", "SimSun";
+        }
+    </style>
+</head>
+<body>
+    <div class="photo area">
+        <ul>
+            <% for(var i = 0; i < dirs.length; i++){ %>
+                <li><a href="./<%=dirs[i]%>"><span><%=dirs[i]%></span></a></li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>

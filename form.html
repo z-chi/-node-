@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:/dopost" method="POST" enctype="multipart/form-data">
+        <p>上传图片到指定的相册</p>
+        <p>相册名字：<input type="text" name="dirname"></p> 
+        <p><input type="file" name="img" multiple="multiple" ></p>
+        <p>是否新建相册？</p>
+        <p>
+            <input type="radio" name="newdir" value="yes">是
+            <input type="radio" name="newdir" value="no">否
+        </p>
+        <p>
+            新相册名字：<input type="text" name="ndname">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+</body>
+</html>
